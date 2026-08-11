@@ -70,7 +70,7 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 bg-accent px-5 py-2.5 text-[12px] uppercase tracking-[0.18em] text-ink btn-sheen transition-all duration-300 hover:bg-accent-light hover:shadow-[0_8px_24px_-8px_hsl(var(--accent)/0.6)]"
+            className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2.5 text-[12px] uppercase tracking-[0.18em] text-ink btn-sheen transition-all duration-300 hover:bg-accent-light hover:shadow-[0_8px_24px_-8px_hsl(var(--accent)/0.6)]"
           >
             Get a Quote
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -122,7 +122,7 @@ export function Navbar() {
           </div>
           <Link
             href="/contact"
-            className="mt-10 inline-flex items-center justify-center gap-2 bg-accent px-6 py-4 text-[12px] uppercase tracking-[0.2em] text-ink btn-sheen"
+            className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-8 py-4 text-[12px] uppercase tracking-[0.2em] text-ink btn-sheen"
           >
             Get a Quote
             <ArrowUpRight className="h-4 w-4" />

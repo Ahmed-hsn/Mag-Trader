@@ -146,6 +146,7 @@
 .btn-sheen {
   position: relative;
   overflow: hidden;
+  border-radius: 9999px;
 }
 .btn-sheen::before {
   content: "";
