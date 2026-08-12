@@ -105,7 +105,7 @@ export const SERVICES: ServiceGroup[] = [
     description:
       'The detail layer of a brand — seals, awards, gifts and launch kits — produced to a standard that matches the rest of your identity.',
     image:
-      'https://images.pexels.com/photos/6345332/pexels-photo-6345332.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      'https://images.unsplash.com/photo-1706180484683-5c8230e92f30?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG9mZmljZSUyMHRhYmxlJTIwZ2lmdHxlbnwwfHwwfHx8MA%3D%3D',
     alt: 'Elegant gift boxes on a marble surface',
     items: [
       { label: 'Rubber Stamps', desc: 'Official stamps and company seals.' },
