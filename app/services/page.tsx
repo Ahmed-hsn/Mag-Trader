@@ -22,7 +22,7 @@ export default function ServicesPage() {
               Explore the complete MAG Traders service line. Choose a department, share your brief and we will take care of the details from artwork to delivery.
             </p>
           </div>
-          <div className="reveal reveal-delay-2 mt-16 lg:mt-24">
+          <div className="mt-16 lg:mt-24">
             <ServiceCategoryGrid />
           </div>
         </section>

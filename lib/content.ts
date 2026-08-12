@@ -198,7 +198,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       {
         id: 'letterheads-envelopes',
         title: 'Letterheads & Envelopes',
-        image: 'https://images.unsplash.com/photo-1706895022954-5e5a2dc4e59e?w=600&auto=format&fit=crop&q=60',
+        image: 'https://plus.unsplash.com/premium_photo-1681487591275-4c38e89b1d5e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGV0dGVyaGVhZCUyMGFuZCUyMGVudmVsb3B8ZW58MHx8MHx8fDA%3D',
         alt: 'Letterheads and envelopes printing',
         category: 'Printing',
       },

@@ -39,9 +39,11 @@ export function Navbar() {
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-premium',
-        scrolled
-          ? 'bg-ink/80 backdrop-blur-xl border-b border-paper/10 shadow-[0_1px_30px_-12px_rgba(0,0,0,0.6)]'
-          : 'bg-transparent border-b border-transparent'
+        open
+          ? 'bg-ink border-b border-paper/10'
+          : scrolled
+            ? 'bg-ink/95 backdrop-blur-xl border-b border-paper/10 shadow-[0_1px_30px_-12px_rgba(0,0,0,0.6)]'
+            : 'bg-transparent border-b border-transparent'
       )}
     >
       <nav className="container-edge flex h-[68px] items-center justify-between lg:h-[76px]">
