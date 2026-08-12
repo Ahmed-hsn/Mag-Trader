@@ -14,7 +14,7 @@ export function HeroSlider() {
     setMounted(true);
     const t = setInterval(() => {
       setIndex((i) => (i + 1) % HERO_SLIDES.length);
-    }, 6500);
+    }, 4500);
     return () => clearInterval(t);
   }, []);
 
@@ -26,7 +26,7 @@ export function HeroSlider() {
           <div
             key={i}
             className={cn(
-              'absolute inset-0 transition-opacity duration-1000 ease-premium',
+              'absolute inset-0 transition-opacity duration-700 ease-premium',
               i === index ? 'opacity-100' : 'opacity-0'
             )}
             aria-hidden={i !== index}
@@ -75,7 +75,7 @@ export function HeroSlider() {
           >
             Welcome to{' '}
             <span className="italic text-paper/90">MAG Traders</span>{' '}
-            <span className="text-brand">(Pvt.) Ltd.</span>
+            <span className="text-accent">(Pvt.) Ltd.</span>
           </h1>
 
           <p
