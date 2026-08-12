@@ -1,5 +1,19 @@
 export type ServiceItem = { label: string; desc: string };
 
+export type IndividualService = {
+  id: string;
+  title: string;
+  image: string;
+  alt: string;
+  category: string;
+};
+
+export type ServiceCategory = {
+  id: string;
+  label: string;
+  services: IndividualService[];
+};
+
 export type ServiceGroup = {
   id: string;
   index: string;
@@ -116,6 +130,264 @@ export const SERVICES: ServiceGroup[] = [
       { label: 'Office Supplies', desc: 'Bulk supply contracts for organisations.' },
       { label: 'Computer & Laptop Sales', desc: 'Business-grade hardware with warranty.' },
       { label: 'Accessories', desc: 'Peripherals and networking gear.' },
+    ],
+  },
+];
+
+export const SERVICE_CATEGORIES: ServiceCategory[] = [
+  {
+    id: 'printing',
+    label: 'Printing',
+    services: [
+      {
+        id: 'offset-printing',
+        title: 'Offset Printing',
+        image: 'https://images.unsplash.com/photo-1693031630369-bd429a57f115?w=600&auto=format&fit=crop&q=60',
+        alt: 'Industrial offset printing machine',
+        category: 'Printing',
+      },
+      {
+        id: 'digital-printing',
+        title: 'Digital Printing',
+        image: 'https://images.unsplash.com/photo-1706895040634-62055892cbbb?q=80&w=1170&auto=format&fit=crop',
+        alt: 'Digital printing machine producing vibrant prints',
+        category: 'Printing',
+      },
+      {
+        id: 'large-format-printing',
+        title: 'Large Format Printing',
+        image: 'https://images.unsplash.com/photo-1676474506722-4bf98059b74a?w=600&auto=format&fit=crop&q=60',
+        alt: 'Large format printing for banners and displays',
+        category: 'Printing',
+      },
+      {
+        id: 'flex-printing',
+        title: 'Flex Printing',
+        image: 'https://images.unsplash.com/photo-1676474508989-40ddb421e426?w=600&auto=format&fit=crop&q=60',
+        alt: 'Flex printing for shop fronts and events',
+        category: 'Printing',
+      },
+      {
+        id: 'banner-printing',
+        title: 'Banner Printing',
+        image: 'https://images.unsplash.com/photo-1624951518564-aca827daaee7?q=80&w=1170&auto=format&fit=crop',
+        alt: 'Banner printing for events and advertising',
+        category: 'Printing',
+      },
+      {
+        id: 'vinyl-printing',
+        title: 'Vinyl Printing',
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=60',
+        alt: 'Vinyl printing for glass, walls and vehicles',
+        category: 'Printing',
+      },
+      {
+        id: 'brochures-flyers-leaflets',
+        title: 'Brochures, Flyers & Leaflets',
+        image: 'https://images.unsplash.com/photo-1695634621375-0b66a9d5d1bc?w=600&auto=format&fit=crop&q=60',
+        alt: 'Brochures, flyers and leaflets printing',
+        category: 'Printing',
+      },
+      {
+        id: 'business-cards',
+        title: 'Business Cards',
+        image: 'https://images.unsplash.com/photo-1599590984817-0c15f31b1fa5?w=600&auto=format&fit=crop&q=60',
+        alt: 'Premium business cards printing',
+        category: 'Printing',
+      },
+      {
+        id: 'letterheads-envelopes',
+        title: 'Letterheads & Envelopes',
+        image: 'https://images.unsplash.com/photo-1706895022954-5e5a2dc4e59e?w=600&auto=format&fit=crop&q=60',
+        alt: 'Letterheads and envelopes printing',
+        category: 'Printing',
+      },
+      {
+        id: 'company-profiles',
+        title: 'Company Profiles',
+        image: 'https://images.unsplash.com/photo-1692255359792-bc8bf9985925?w=600&auto=format&fit=crop&q=60',
+        alt: 'Company profile booklets and printing',
+        category: 'Printing',
+      },
+      {
+        id: 'catalogs-booklets',
+        title: 'Catalogs & Booklets',
+        image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e',
+        alt: 'Product catalogs and booklet printing',
+        category: 'Printing',
+      },
+      {
+        id: 'wedding-invitation-cards',
+        title: 'Wedding & Invitation Cards',
+        image: 'https://images.unsplash.com/photo-1710961716412-5e246a002e99?w=600&auto=format&fit=crop&q=60',
+        alt: 'Elegant wedding and invitation card printing',
+        category: 'Printing',
+      },
+      {
+        id: 'product-packaging',
+        title: 'Product Packaging',
+        image: 'https://images.unsplash.com/photo-1617825295690-28ae56c56135?w=600&auto=format&fit=crop&q=60',
+        alt: 'Custom product packaging and boxes',
+        category: 'Printing',
+      },
+      {
+        id: 'stickers-labels',
+        title: 'Stickers & Labels',
+        image: 'https://images.unsplash.com/photo-1750224981218-9c4176ccf172?q=80&w=1170&auto=format&fit=crop',
+        alt: 'Custom stickers and label printing',
+        category: 'Printing',
+      },
+    ],
+  },
+  {
+    id: 'branding',
+    label: 'Branding',
+    services: [
+      {
+        id: 'sign-boards',
+        title: 'Sign Boards',
+        image: 'https://images.unsplash.com/photo-1593505681742-8cbb6f44de25?w=600&auto=format&fit=crop&q=60',
+        alt: 'Custom sign boards for businesses',
+        category: 'Branding',
+      },
+      {
+        id: 'hoardings',
+        title: 'Hoardings',
+        image: 'https://images.unsplash.com/photo-1739115517835-4b07f4d7d959?w=600&auto=format&fit=crop&q=60',
+        alt: 'Large outdoor hoardings and billboards',
+        category: 'Branding',
+      },
+      {
+        id: 'outdoor-advertising',
+        title: 'Outdoor Advertising',
+        image: 'https://images.unsplash.com/photo-1557858310-9052820906f7?w=600&auto=format&fit=crop&q=60',
+        alt: 'Outdoor advertising campaigns',
+        category: 'Branding',
+      },
+      {
+        id: 'indoor-branding',
+        title: 'Indoor Branding',
+        image: 'https://images.unsplash.com/photo-1696098917564-6967d4a69ea1?w=600&auto=format&fit=crop&q=60',
+        alt: 'Indoor branding solutions and wall graphics',
+        category: 'Branding',
+      },
+      {
+        id: 'vehicle-branding',
+        title: 'Vehicle Branding',
+        image: 'https://images.unsplash.com/photo-1778498978944-010ca953e72d?w=600&auto=format&fit=crop&q=60',
+        alt: 'Vehicle wraps and fleet branding',
+        category: 'Branding',
+      },
+      {
+        id: 'exhibition-event-branding',
+        title: 'Exhibition & Event Branding',
+        image: 'https://images.unsplash.com/photo-1711390811937-1b061eaf28ea?w=600&auto=format&fit=crop&q=60',
+        alt: 'Exhibition stalls and event branding',
+        category: 'Branding',
+      },
+      {
+        id: 'advertising-campaigns',
+        title: 'Advertising Campaigns',
+        image: 'https://images.unsplash.com/photo-1587161584760-f51779fb276a?w=600&auto=format&fit=crop&q=60',
+        alt: 'Creative advertising campaign design',
+        category: 'Branding',
+      },
+      {
+        id: 'promotional-materials',
+        title: 'Promotional Materials',
+        image: 'https://images.unsplash.com/photo-1712903277236-67ff1a9cbbcd?w=600&auto=format&fit=crop&q=60',
+        alt: 'Branded promotional materials and collateral',
+        category: 'Branding',
+      },
+      {
+        id: 'corporate-branding-solutions',
+        title: 'Corporate Branding Solutions',
+        image: 'https://images.unsplash.com/photo-1636247499734-893da2bcfc1c?w=600&auto=format&fit=crop&q=60',
+        alt: 'End-to-end corporate branding solutions',
+        category: 'Branding',
+      },
+    ],
+  },
+  {
+    id: 'corporate',
+    label: 'Corporate',
+    services: [
+      {
+        id: 'rubber-stamps',
+        title: 'Rubber Stamps',
+        image: 'https://images.unsplash.com/photo-1611075551111-dfda5f9c6f02?w=600&auto=format&fit=crop&q=60',
+        alt: 'Official rubber stamps for businesses',
+        category: 'Corporate',
+      },
+      {
+        id: 'company-seals',
+        title: 'Company Seals',
+        image: 'https://images.unsplash.com/photo-1612178991541-b48cc8e92a4d?w=600&auto=format&fit=crop&q=60',
+        alt: 'Official company seals and embossing stamps',
+        category: 'Corporate',
+      },
+      {
+        id: 'trophies-shields-awards',
+        title: 'Trophies, Shields & Awards',
+        image: 'https://images.unsplash.com/photo-1665680674724-3a3b3368e036?w=600&auto=format&fit=crop&q=60',
+        alt: 'Custom trophies, shields and recognition awards',
+        category: 'Corporate',
+      },
+      {
+        id: 'customized-tshirts',
+        title: 'Customized T-Shirts',
+        image: 'https://images.unsplash.com/photo-1696086152586-09a0855dbc9c?w=600&auto=format&fit=crop&q=60',
+        alt: 'Custom branded t-shirts for corporate teams',
+        category: 'Corporate',
+      },
+      {
+        id: 'corporate-gift-items',
+        title: 'Corporate Gift Items',
+        image: 'https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&auto=format&fit=crop&q=60',
+        alt: 'Curated corporate gift items and sets',
+        category: 'Corporate',
+      },
+      {
+        id: 'new-product-launch-kits',
+        title: 'New Product Launch Kits',
+        image: 'https://images.unsplash.com/photo-1610187224288-3edae8c38ae8?w=600&auto=format&fit=crop&q=60',
+        alt: 'Product launch kits and packaging',
+        category: 'Corporate',
+      },
+    ],
+  },
+  {
+    id: 'office-it',
+    label: 'Office & IT',
+    services: [
+      {
+        id: 'complete-office-stationery',
+        title: 'Complete Office Stationery',
+        image: 'https://images.unsplash.com/photo-1456735190827-d1262f71b8a3',
+        alt: 'Complete office stationery supplies',
+        category: 'Office & IT',
+      },
+      {
+        id: 'computer-laptop-sales',
+        title: 'Computer & Laptop Sales',
+        image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60',
+        alt: 'Business-grade computers and laptops',
+        category: 'Office & IT',
+      },
+      {
+        id: 'laptop-computer-accessories',
+        title: 'Laptop & Computer Accessories',
+        image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=60',
+        alt: 'Laptop and computer peripherals and accessories',
+        category: 'Office & IT',
+      },
+      {
+        id: 'office-supplies',
+        title: 'Office Supplies',
+        image: 'https://images.unsplash.com/photo-1654931800100-2ecf6eee7c64?w=600&auto=format&fit=crop&q=60',
+        alt: 'Bulk office supplies for organizations',
+        category: 'Office & IT',
+      },
     ],
   },
 ];

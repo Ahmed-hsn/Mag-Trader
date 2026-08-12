@@ -2,7 +2,7 @@
 
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
-import { ServiceCards } from '@/components/service-cards';
+import { ServiceCategoryGrid } from '@/components/service-cards';
 import { Delivery } from '@/components/delivery';
 import { useReveal } from '@/hooks/use-reveal';
 
@@ -23,7 +23,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="reveal reveal-delay-2 mt-16 lg:mt-24">
-            <ServiceCards />
+            <ServiceCategoryGrid />
           </div>
         </section>
         <Delivery />

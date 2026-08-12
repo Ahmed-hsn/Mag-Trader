@@ -1,19 +1,22 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, Check } from 'lucide-react';
-import { SERVICES } from '@/lib/content';
+import { SERVICES, SERVICE_CATEGORIES } from '@/lib/content';
 
+/* ─── Compact homepage cards (4 main categories) ─── */
 export function ServiceCards({ compact = false }: { compact?: boolean }) {
   const services = compact ? SERVICES.slice(0, 4) : SERVICES;
 
   return (
     <div className={`grid gap-5 sm:grid-cols-2 ${compact ? 'lg:grid-cols-4' : 'lg:grid-cols-2'}`}>
-      {services.map((service, index) => (
+      {services.map((service) => (
         <article
           key={service.id}
           className="group relative overflow-hidden rounded-sm border border-paper/10 bg-ink-soft transition-all duration-500 hover:-translate-y-2 hover:border-accent/70 hover:shadow-[0_24px_60px_-24px_rgba(249,115,22,0.55)]"
         >
-          <div className={`${compact ? 'aspect-[4/3]' : 'aspect-[16/8]' } relative overflow-hidden`}>
+          <div className={`${compact ? 'aspect-[4/3]' : 'aspect-[16/8]'} relative overflow-hidden`}>
             <Image
               src={service.image}
               alt={service.alt}
@@ -37,14 +40,6 @@ export function ServiceCards({ compact = false }: { compact?: boolean }) {
               {service.title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-paper/60">{service.description}</p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {service.items.slice(0, compact ? 3 : 5).map((item) => (
-                <span key={item.label} className="inline-flex items-center gap-1.5 border border-paper/10 px-2.5 py-1.5 text-[10px] uppercase tracking-[0.12em] text-paper/60 transition-colors group-hover:border-brand-light/40 group-hover:text-paper/80">
-                  <Check className="h-3 w-3 text-accent" />
-                  {item.label}
-                </span>
-              ))}
-            </div>
             {compact && (
               <Link href="/services" className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-accent transition-colors hover:text-accent-light">
                 Explore service
@@ -53,6 +48,75 @@ export function ServiceCards({ compact = false }: { compact?: boolean }) {
             )}
           </div>
         </article>
+      ))}
+    </div>
+  );
+}
+
+/* ─── Full services page: individual cards grouped by category ─── */
+export function ServiceCategoryGrid() {
+  return (
+    <div className="space-y-20 lg:space-y-28">
+      {SERVICE_CATEGORIES.map((category, catIndex) => (
+        <section key={category.id}>
+          {/* Category header */}
+          <div className="mb-10 flex items-end gap-6 border-b border-paper/10 pb-6">
+            <div>
+              <span className="font-mono text-[11px] tracking-widest text-accent">
+                {String(catIndex + 1).padStart(2, '0')}
+              </span>
+              <h2 className="display mt-2 text-3xl text-paper sm:text-4xl">{category.label}</h2>
+            </div>
+            <span className="mb-1 ml-auto font-mono text-[11px] tracking-widest text-paper/40">
+              {category.services.length} services
+            </span>
+          </div>
+
+          {/* Individual service cards */}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {category.services.map((service) => (
+              <article
+                key={service.id}
+                className="group relative overflow-hidden rounded-sm border border-paper/10 bg-ink-soft transition-all duration-500 hover:-translate-y-2 hover:border-accent/70 hover:shadow-[0_20px_50px_-20px_rgba(249,115,22,0.5)]"
+              >
+                {/* Card image */}
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition duration-700 ease-premium group-hover:scale-110"
+                    unoptimized
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
+                  {/* Category badge */}
+                  <span className="absolute left-4 top-4 rounded-full border border-accent/40 bg-ink/70 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-accent backdrop-blur-sm">
+                    {service.category}
+                  </span>
+                  {/* Hover arrow */}
+                  <span className="absolute bottom-4 right-4 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full bg-accent text-ink opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </div>
+
+                {/* Card body */}
+                <div className="p-5">
+                  <h3 className="text-base font-semibold leading-snug text-paper transition-colors duration-300 group-hover:text-accent-light">
+                    {service.title}
+                  </h3>
+                  <div className="mt-3 flex items-center gap-1.5">
+                    <Check className="h-3 w-3 flex-shrink-0 text-accent" />
+                    <span className="text-[10px] uppercase tracking-[0.12em] text-paper/50">
+                      Available Now
+                    </span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       ))}
     </div>
   );
