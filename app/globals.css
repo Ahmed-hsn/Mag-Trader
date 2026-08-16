@@ -88,6 +88,11 @@
 }
 
 @layer utilities {
+  .service-page {
+    --brand: 24 95% 55%;
+    --brand-light: 28 100% 62%;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

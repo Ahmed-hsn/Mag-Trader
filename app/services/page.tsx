@@ -11,7 +11,7 @@ export default function ServicesPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-ink pt-28">
+      <main className="service-page bg-ink pt-28">
         <section className="container-edge py-20 sm:py-28 lg:py-36">
           <div className="reveal max-w-4xl">
             <span className="eyebrow text-accent">Our capabilities</span>
